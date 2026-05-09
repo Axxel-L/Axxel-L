@@ -41,7 +41,7 @@
 
 ### 📊 Activité GitHub (2026)
 
-[![Graphique d'activité](https://github-readme-activity-graph.vercel.app/graph?username=Axxel-L&from=2026-01-01&theme=react-dark&area=true&hide_border=true)](https://github.com/Axxel-L)
+![Graphique d'activité](https://raw.githubusercontent.com/Axxel-L/Axxel-L/main/activity-graph.svg)
 
 | Statistiques | Langages dominants |
 |-------------|-------------------|
