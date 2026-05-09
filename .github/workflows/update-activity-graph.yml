@@ -15,8 +15,7 @@ jobs:
       - name: 📥 Télécharger le graphique
         run: |
           curl -s -o activity-graph.svg \
-            "https://github-readme-activity-graph.vercel.app/graph?username=Axxel-L&year=2026&theme=react-dark&area=true&hide_border=true&token=${{ secrets.ACTIVITY_GRAPH_TOKEN }}"
-
+            "https://github-readme-activity-graph.vercel.app/graph?username=Axxel-L&from=2026-01-01&theme=react-dark&area=true&hide_border=true&token=${{ secrets.ACTIVITY_GRAPH_TOKEN }}"
       - name: 📤 Commiter et pousser
         run: |
           git config user.name "github-actions[bot]"
