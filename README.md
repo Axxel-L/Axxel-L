@@ -1,18 +1,87 @@
-<h1 align="center">Hey 👋🏻, je suis Axel Lalaut</h1>
-<h3 align="center">Un entrepreneur et développeur Web / Desktop</h3>
+<div align="center">
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=legoshiifr&label=Profile%20views&color=0e75b6&style=flat" alt="legoshiifr" /> </p>
+# 👋 Hey, moi c’est **Axel Lalaut**
 
-- 🏢 Mon agence web [Agence Prestige Numérique](https://agence-prestige-numerique.fr/)
+### Entrepreneur & Développeur Web / Desktop
 
-- 🔎 Mes réseaux sociaux <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="axel-lalaut" height="15" width="20"/> [Linkedin](https://www.linkedin.com/in/axel-lalaut-481a97292/) / <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="axxel__la" height="15" width="20" /> [Instagram](https://www.instagram.com/axxel__la/)
+[![Profile views](https://komarev.com/ghpvc/?username=legoshiifr&label=Visites&color=0e75b6&style=flat)](https://github.com/legoshiifr)
+[![GitHub followers](https://img.shields.io/github/followers/legoshiifr?label=Followers&style=social)](https://github.com/legoshiifr)
 
-- ✉️ Mon mail **axel-l@agence-prestige-numerique.fr**
+---
 
-<h3 align="left">Langages et outils :</h3>
-<p align="left"> <a href="https://developer.android.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="android" width="40" height="40"/> </a> <a href="https://aws.amazon.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="40" height="40"/> </a> <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/> </a> <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://dart.dev" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg" alt="dart" width="40" height="40"/> </a> <a href="https://www.electronjs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/electron/electron-original.svg" alt="electron" width="40" height="40"/> </a> <a href="https://flutter.dev" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg" alt="flutter" width="40" height="40"/> </a> <a href="https://cloud.google.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="gcp" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://www.php.net" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="php" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://unrealengine.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/kenangundogan/fontisto/036b7eca71aab1bef8e6a0518f7329f13ed62f6b/icons/svg/brand/unreal-engine.svg" alt="unreal" width="40" height="40"/> </a> </p>
+### 🚀 Mes projets principaux
 
-<h3 align="left">Support :</h3>
-<p><a href="https://ko-fi.com/Legoshii"> <img align="left" src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3" height="50" width="210" alt="Legoshii" /></a></p><br><br>
-<br><br>
-<p><img src="https://projets.agence-prestige-numerique.fr/github_stats/api/generate.php?username=Axxel-L" alt="GitHub Profile" /></p>
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <a href="https://agence-prestige-numerique.fr/">
+        <img src="https://agence-prestige-numerique.fr/img/logo_1.png" width="50"><br>
+        <b>Agence Prestige Numérique</b>
+      </a><br>
+      <sub>Agence web – création de sites, SEO, marketing</sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="https://clipurl.fr/">
+        <img src="https://clipurl.fr/favicon.ico" width="50"><br>
+        <b>ClipUrl</b>
+      </a><br>
+      <sub>Raccourcisseur de liens monétisé – gagnez de l’argent en partageant des liens</sub>
+    </td>
+    <td align="center" width="33%">
+      <a href="https://neoheberg.fr/">
+        <img src="https://neoheberg.fr/img/logo.webp" width="50"><br>
+        <b>NeoHeberg</b>
+      </a><br>
+      <sub>Hébergeur gratuit (Node.js, Python, VPS) – association présidée par moi</sub>
+    </td>
+  </tr>
+</table>
+
+---
+
+### 📊 Activité GitHub (2026)
+
+[![Graphique d'activité](https://github-readme-activity-graph.vercel.app/graph?username=Axxel-L&from=2026-01-01&theme=react-dark&area=true&hide_border=true)](https://github.com/Axxel-L)
+
+| Statistiques | Langages dominants |
+|-------------|-------------------|
+| ![Stats GitHub](https://github-readme-stats.vercel.app/api?username=Axxel-L&show_icons=true&theme=radical&hide_border=true&include_all_commits=true) | ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Axxel-L&layout=compact&theme=radical&hide_border=true) |
+
+---
+
+### 🧰 Stack & outils
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![Electron](https://img.shields.io/badge/Electron-47848F?style=for-the-badge&logo=electron&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+
+---
+
+### 🌐 Où me trouver
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-axel--lalaut-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/axel-lalaut-481a97292/)
+[![Instagram](https://img.shields.io/badge/Instagram-axxel__la-E4405F?style=flat&logo=instagram&logoColor=white)](https://www.instagram.com/axxel__la/)
+[![Email](https://img.shields.io/badge/Email-axel--l@agence--prestige--numerique.fr-D14836?style=flat&logo=gmail&logoColor=white)](mailto:axel-l@agence-prestige-numerique.fr)
+
+---
+
+### ❤️ Soutenir mon travail
+
+[![Ko-fi](https://cdn.ko-fi.com/cdn/kofi3.png?v=3)](https://ko-fi.com/Legoshii)
+
+</div>
