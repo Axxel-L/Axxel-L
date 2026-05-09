@@ -103,10 +103,7 @@ jobs:
               svg.append(f'<rect x=\"{x}\" y=\"{y}\" width=\"{bar_width-1}\" height=\"{bar_h}\" class=\"{cls}\"/>')
 
           # Axe X
-          svg.append(f'<line x1=\"{margin_left}\" y1=\"{margin_top + plot_height}\" x2=\"{width-margin_right}\" y2=\"{margin_top + plot_height}\" class=\"axe-line\"/>')
-
-          # Titre
-          svg.append(f'<text x=\"{width/2}\" y=\"28\" text-anchor=\"middle\" class=\"title\">Mes contributions en 2026</text>')
+          svg.append(f'<line x1=\"{margin_left}\" y1=\"{margin_top + plot_height}\" x2=\"{width-margin_right}\" y2=\"{margin_top + plot_height}\" class=\"axe-line\"/>'))
 
           # Mois
           for m in range(1, 13):
