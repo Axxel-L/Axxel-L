@@ -147,9 +147,9 @@
 <rect x="1126.5116279069769" y="183.75" width="7.372093023255815" height="106.25" class="bar-green"/>
 <rect x="1134.8837209302326" y="233.75" width="7.372093023255815" height="56.25" class="bar-green"/>
 <rect x="1143.2558139534885" y="290" width="7.372093023255815" height="0" class="bar-empty"/>
-<rect x="1151.6279069767443" y="58.75" width="7.372093023255815" height="231.25" class="bar-green"/>
+<rect x="1151.6279069767443" y="40.0" width="7.372093023255815" height="250.0" class="bar-green"/>
 <line x1="80" y1="290" x2="1160" y2="290" class="axe-line"/>
-<text x="600.0" y="28" text-anchor="middle" class="title">Mes contributions en 2026</text>
+<text x="600.0" y="28" text-anchor="middle" class="title"></text>
 <text x="80.0" y="310" text-anchor="middle">Jan</text>
 <text x="339.5348837209302" y="310" text-anchor="middle">Feb</text>
 <text x="573.953488372093" y="310" text-anchor="middle">Mar</text>
