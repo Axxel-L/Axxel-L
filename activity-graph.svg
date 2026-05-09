@@ -149,7 +149,7 @@
 <rect x="1126.5116279069769" y="195.55555555555554" width="7.372093023255815" height="94.44444444444444" class="bar-green"/>
 <rect x="1134.8837209302326" y="240.0" width="7.372093023255815" height="50.0" class="bar-green"/>
 <rect x="1143.2558139534885" y="290" width="7.372093023255815" height="0" class="bar-empty"/>
-<rect x="1151.6279069767443" y="56.66666666666666" width="7.372093023255815" height="233.33333333333334" class="bar-green"/>
+<rect x="1151.6279069767443" y="51.111111111111086" width="7.372093023255815" height="238.8888888888889" class="bar-green"/>
 <line x1="80" y1="290" x2="1160" y2="290" class="axe-line"/>
 <text x="600.0" y="28" text-anchor="middle" class="title">Mes contributions en 2026</text>
 <text x="80.0" y="310" text-anchor="middle">Jan</text>
@@ -157,4 +157,5 @@
 <text x="573.953488372093" y="310" text-anchor="middle">Mar</text>
 <text x="833.4883720930234" y="310" text-anchor="middle">Apr</text>
 <text x="1084.6511627906978" y="310" text-anchor="middle">May</text>
+<!-- Cache bust: 2026-05-09T20:12:36.512764 -->
 </svg>
