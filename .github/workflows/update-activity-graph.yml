@@ -14,80 +14,93 @@ jobs:
 
       - name: 🐍 Générer le graphique annuel
         env:
-          GITHUB_TOKEN: ${{ secrets.ACTIVITY_GRAPH_TOKEN }}
+          GH_TOKEN: ${{ secrets.ACTIVITY_GRAPH_TOKEN }}
         run: |
           python3 -c "
-          import requests, json, datetime, math
+          import requests, datetime, math, os
           from collections import defaultdict
 
-          token = '${{ secrets.ACTIVITY_GRAPH_TOKEN }}'
+          token = os.environ['GH_TOKEN']
           headers = {'Authorization': f'bearer {token}'}
-          query = '''
-          query(\$login: String!, \$from: DateTime!, \$to: DateTime!) {
-            user(login: \$login) {
-              contributionsCollection(from: \$from, to: \$to) {
-                contributionCalendar {
-                  weeks {
-                    contributionDays {
-                      date
-                      contributionCount
-                    }
-                  }
-                }
-              }
-            }
-          }
-          '''
-          variables = {
-            'login': 'Axxel-L',
-            'from': '2026-01-01T00:00:00+00:00',
-            'to': '2027-01-01T00:00:00+00:00'
-          }
-          r = requests.post('https://api.github.com/graphql', json={'query': query, 'variables': variables}, headers=headers)
-          data = r.json()
+          per_page = 100
+          page = 1
+          events = []
+          # Récupération des 300 derniers événements PushEvent (max 3 pages)
+          for _ in range(3):
+              url = f'https://api.github.com/users/Axxel-L/events?per_page={per_page}&page={page}'
+              r = requests.get(url, headers=headers)
+              if r.status_code != 200:
+                  print(f'Error: {r.status_code} - {r.text}')
+                  break
+              batch = r.json()
+              if not batch:
+                  break
+              events.extend(batch)
+              page += 1
+
+          # Comptage des commits par jour
+          daily = defaultdict(int)
+          for ev in events:
+              if ev['type'] == 'PushEvent':
+                  date = ev['created_at'][:10]  # YYYY-MM-DD
+                  # Le nombre de commits du push est len(ev['payload']['commits'])
+                  daily[date] += len(ev['payload']['commits'])
+
+          if not daily:
+              print('No push events found, generating empty graph.')
+              daily[datetime.date.today().isoformat()] = 0
+
+          # Création d'une liste ordonnée de tous les jours de 2026 jusqu'à aujourd'hui
+          start = datetime.date(2026, 1, 1)
+          end = datetime.date.today()
+          if end.year > 2026:
+              end = datetime.date(2027, 1, 1) - datetime.timedelta(days=1)
           days = []
-          for week in data['data']['user']['contributionsCollection']['contributionCalendar']['weeks']:
-              for d in week['contributionDays']:
-                  days.append((d['date'], d['contributionCount']))
-          
-          # Création du SVG
+          d = start
+          while d <= end:
+              days.append(d.isoformat())
+              d += datetime.timedelta(days=1)
+          max_count = max(daily.values()) if daily else 1
+          max_count = max(10, max_count)
+
+          # Dimensions SVG
           width = 1200
           height = 300
           margin = 60
           bar_width = (width - 2*margin) / len(days) if days else 1
-          max_count = max(c for _,c in days) if days else 1
-          max_count = max(10, max_count)
-          
+
           svg = [f'<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"{width}\" height=\"{height}\">']
           svg.append(f'<rect width=\"100%\" height=\"100%\" fill=\"#0d1117\"/>')
-          
-          for i, (date, count) in enumerate(days):
+
+          for i, date_str in enumerate(days):
+              count = daily.get(date_str, 0)
               x = margin + i * bar_width
               bar_h = (count / max_count) * (height - 2*margin) if count > 0 else 0
               y = height - margin - bar_h
               color = '#39d353' if count > 0 else '#2d333b'
               svg.append(f'<rect x=\"{x}\" y=\"{y}\" width=\"{bar_width-1}\" height=\"{bar_h}\" fill=\"{color}\"/>')
-          
-          # Axes
+
+          # Axe horizontal
           svg.append(f'<line x1=\"{margin}\" y1=\"{height-margin}\" x2=\"{width-margin}\" y2=\"{height-margin}\" stroke=\"#555\" stroke-width=\"1\"/>')
           # Titre
-          svg.append(f'<text x=\"{width/2}\" y=\"30\" text-anchor=\"middle\" fill=\"#5bcdec\" font-size=\"20\" font-weight=\"bold\">Contributions 2026</text>')
-          # Mois
-          for m in range(1,13):
+          svg.append(f'<text x=\"{width/2}\" y=\"30\" text-anchor=\"middle\" fill=\"#5bcdec\" font-size=\"20\" font-weight=\"bold\">Commits 2026 (push events)</text>')
+          # Mois (un label tous les 1er du mois)
+          for m in range(1, 13):
               date_obj = datetime.date(2026, m, 1)
-              day_of_year = (date_obj - datetime.date(2026, 1, 1)).days
-              x = margin + day_of_year * bar_width
-              svg.append(f'<text x=\"{x}\" y=\"{height-margin+20}\" text-anchor=\"middle\" fill=\"#ccc\" font-size=\"12\">{date_obj.strftime(\"%b\")}</text>')
-          
+              delta = (date_obj - start).days
+              if delta < len(days):
+                  x = margin + delta * bar_width
+                  svg.append(f'<text x=\"{x}\" y=\"{height-margin+20}\" text-anchor=\"middle\" fill=\"#ccc\" font-size=\"12\">{date_obj.strftime(\"%b\")}</text>')
+
           svg.append('</svg>')
-          
           with open('activity-graph.svg', 'w') as f:
               f.write('\\n'.join(svg))
-          print('Graph generated.')
-          "        
+          print('✅ Graph generated.')
+          "
+
       - name: 📤 Commit et push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add activity-graph.svg
-          git diff --staged --quiet || (git commit -m "📊 Mise à jour du graphique 2026" && git push)
+          git diff --staged --quiet || (git commit -m "📊 Graphique commits 2026 mis à jour" && git push)
