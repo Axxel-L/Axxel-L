@@ -130,7 +130,7 @@
 <rect x="1123.2558139534885" y="240" width="7.372093023255815" height="0" fill="#2d333b"/>
 <rect x="1131.6279069767443" y="240" width="7.372093023255815" height="0" fill="#2d333b"/>
 <line x1="60" y1="240" x2="1140" y2="240" stroke="#555" stroke-width="1"/>
-<text x="600.0" y="30" text-anchor="middle" fill="#5bcdec" font-size="20" font-weight="bold">Commits 2026 (push events)</text>
+<text x="600.0" y="30" text-anchor="middle" fill="#5bcdec" font-size="20" font-weight="bold">Mes commits 2026</text>
 <text x="60.0" y="260" text-anchor="middle" fill="#ccc" font-size="12">Jan</text>
 <text x="319.5348837209302" y="260" text-anchor="middle" fill="#ccc" font-size="12">Feb</text>
 <text x="553.953488372093" y="260" text-anchor="middle" fill="#ccc" font-size="12">Mar</text>
