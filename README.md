@@ -4,7 +4,7 @@
 
 ### Entrepreneur & Développeur Web / Desktop
 
-[![Profile views](https://komarev.com/ghpvc/?username=legoshiifr&label=Visites&color=0e75b6&style=flat)](https://github.com/legoshiifr)
+[![Profile views](https://komarev.com/ghpvc/?username=Axxel-L&label=Visites&color=0e75b6&style=flat)](https://github.com/legoshiifr)
 [![GitHub followers](https://img.shields.io/github/followers/legoshiifr?label=Followers&style=social)](https://github.com/legoshiifr)
 
 ---
@@ -41,7 +41,7 @@
 
 ### 📊 Activité GitHub (2026)
 
-![Graphique d'activité](https://raw.githubusercontent.com/Axxel-L/Axxel-L/main/activity-graph.svg)
+[![Graphique d'activité](https://raw.githubusercontent.com/Axxel-L/Axxel-L/main/activity-graph.svg)])
 
 | Statistiques | Langages dominants |
 |-------------|-------------------|
