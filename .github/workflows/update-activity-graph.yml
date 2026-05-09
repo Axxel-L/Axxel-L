@@ -12,49 +12,52 @@ jobs:
       - name: ⬇️ Checkout
         uses: actions/checkout@v4
 
-      - name: 🐍 Générer le graphique annuel
+      - name: 🐍 Générer le graphique des commits 2026
         env:
           GH_TOKEN: ${{ secrets.ACTIVITY_GRAPH_TOKEN }}
         run: |
           python3 -c "
-          import requests, datetime, math, os
+          import requests, datetime, os
           from collections import defaultdict
 
           token = os.environ['GH_TOKEN']
           headers = {'Authorization': f'bearer {token}'}
           per_page = 100
-          page = 1
           events = []
-          # Récupération des 300 derniers événements PushEvent (max 3 pages)
-          for _ in range(3):
+          # Récupération jusqu'à 10 pages (1000 événements max)
+          for page in range(1, 11):
               url = f'https://api.github.com/users/Axxel-L/events?per_page={per_page}&page={page}'
               r = requests.get(url, headers=headers)
               if r.status_code != 200:
-                  print(f'Error: {r.status_code} - {r.text}')
+                  print(f'Erreur API: {r.status_code}')
                   break
               batch = r.json()
               if not batch:
                   break
               events.extend(batch)
-              page += 1
+              # Si l'événement le plus ancien de cette page est avant le 1er janvier 2026, on peut s'arrêter
+              last_date = batch[-1].get('created_at', '')
+              if last_date < '2026-01-01':
+                  break
 
           # Comptage des commits par jour
           daily = defaultdict(int)
           for ev in events:
-              if ev['type'] == 'PushEvent':
-                  date = ev['created_at'][:10]  # YYYY-MM-DD
-                  # Le nombre de commits du push est len(ev['payload']['commits'])
-                  daily[date] += len(ev['payload']['commits'])
+              if ev.get('type') == 'PushEvent':
+                  date = ev['created_at'][:10]  # garder YYYY-MM-DD
+                  commits = ev.get('payload', {}).get('commits', [])
+                  daily[date] += len(commits)
 
           if not daily:
-              print('No push events found, generating empty graph.')
-              daily[datetime.date.today().isoformat()] = 0
+              print('Aucun push event trouvé, graphique vide généré.')
+              daily[str(datetime.date.today())] = 0
 
-          # Création d'une liste ordonnée de tous les jours de 2026 jusqu'à aujourd'hui
+          # Liste de tous les jours du 1er janvier 2026 à aujourd'hui
           start = datetime.date(2026, 1, 1)
           end = datetime.date.today()
           if end.year > 2026:
               end = datetime.date(2027, 1, 1) - datetime.timedelta(days=1)
+
           days = []
           d = start
           while d <= end:
@@ -83,8 +86,8 @@ jobs:
           # Axe horizontal
           svg.append(f'<line x1=\"{margin}\" y1=\"{height-margin}\" x2=\"{width-margin}\" y2=\"{height-margin}\" stroke=\"#555\" stroke-width=\"1\"/>')
           # Titre
-          svg.append(f'<text x=\"{width/2}\" y=\"30\" text-anchor=\"middle\" fill=\"#5bcdec\" font-size=\"20\" font-weight=\"bold\">Commits 2026 (push events)</text>')
-          # Mois (un label tous les 1er du mois)
+          svg.append(f'<text x=\"{width/2}\" y=\"30\" text-anchor=\"middle\" fill=\"#5bcdec\" font-size=\"20\" font-weight=\"bold\">Mes commits 2026</text>')
+          # Labels des mois
           for m in range(1, 13):
               date_obj = datetime.date(2026, m, 1)
               delta = (date_obj - start).days
@@ -95,12 +98,12 @@ jobs:
           svg.append('</svg>')
           with open('activity-graph.svg', 'w') as f:
               f.write('\\n'.join(svg))
-          print('✅ Graph generated.')
+          print('✅ Graphique généré.')
           "
 
-      - name: 📤 Commit et push
+      - name: 📤 Commiter et pousser
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add activity-graph.svg
-          git diff --staged --quiet || (git commit -m "📊 Graphique commits 2026 mis à jour" && git push)
+          git diff --staged --quiet || (git commit -m "📊 Mise à jour du graphique annuel" && git push)
