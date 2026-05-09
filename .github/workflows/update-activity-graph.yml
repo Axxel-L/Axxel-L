@@ -116,10 +116,13 @@ jobs:
                   x = margin_left + delta * bar_width
                   svg.append(f'<text x=\"{x}\" y=\"{margin_top + plot_height + 20}\" text-anchor=\"middle\">{date_obj.strftime(\"%b\")}</text>')
 
+          # ⚡ Casse-cache définitif : commentaire avec horodatage
+          svg.append(f'<!-- Cache bust: {datetime.datetime.now().isoformat()} -->')
           svg.append('</svg>')
+
           with open('activity-graph.svg', 'w') as f:
               f.write('\\n'.join(svg))
-          print('✅ Graphique 2026 avec axe Y généré.')
+          print('✅ Graphique 2026 avec axe Y généré (cache invalide).')
           "
 
       - name: 📤 Commiter le graphique
