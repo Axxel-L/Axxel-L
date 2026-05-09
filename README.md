@@ -45,7 +45,7 @@
 
 | Statistiques | Langages dominants |
 |-------------|-------------------|
-| ![Stats GitHub](https://github-readme-stats.vercel.app/api?username=Axxel-L&show_icons=true&theme=radical&hide_border=true&include_all_commits=true) | ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Axxel-L&layout=compact&theme=radical&hide_border=true) |
+| ![Stats](https://github-readme-stats-salesp07.vercel.app/api?username=Axxel-L&show_icons=true&theme=radical&hide_border=true&include_all_commits=true) | ![Top Langs](https://github-readme-stats-salesp07.vercel.app/api/top-langs/?username=Axxel-L&layout=compact&theme=radical&hide_border=true) |
 
 ---
 
