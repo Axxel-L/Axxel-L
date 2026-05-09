@@ -2,7 +2,7 @@ name: 📈 Graphique d'activité 2026
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  
+    - cron: '0 */6 * * *'
   workflow_dispatch:
 
 jobs:
@@ -12,16 +12,82 @@ jobs:
       - name: ⬇️ Checkout
         uses: actions/checkout@v4
 
-      - name: 📊 Générer le graphique d'activité
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.ACTIVITY_GRAPH_TOKEN }}
-          plugin_activity: yes
-          plugin_activity_days: 365
-          plugin_activity_visibility: all
-          plugin_activity_filter: all
-          plugin_activity_limit: 365
-          base: ""
-          filename: activity-graph.svg
-          output_action: commit
-          committer_branch: main
+      - name: 🐍 Générer le graphique annuel
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACTIVITY_GRAPH_TOKEN }}
+        run: |
+          python3 -c "
+          import requests, json, datetime, math
+          from collections import defaultdict
+
+          token = '${{ secrets.ACTIVITY_GRAPH_TOKEN }}'
+          headers = {'Authorization': f'bearer {token}'}
+          query = '''
+          query(\$login: String!, \$from: DateTime!, \$to: DateTime!) {
+            user(login: \$login) {
+              contributionsCollection(from: \$from, to: \$to) {
+                contributionCalendar {
+                  weeks {
+                    contributionDays {
+                      date
+                      contributionCount
+                    }
+                  }
+                }
+              }
+            }
+          }
+          '''
+          variables = {
+            'login': 'Axxel-L',
+            'from': '2026-01-01T00:00:00+00:00',
+            'to': '2027-01-01T00:00:00+00:00'
+          }
+          r = requests.post('https://api.github.com/graphql', json={'query': query, 'variables': variables}, headers=headers)
+          data = r.json()
+          days = []
+          for week in data['data']['user']['contributionsCollection']['contributionCalendar']['weeks']:
+              for d in week['contributionDays']:
+                  days.append((d['date'], d['contributionCount']))
+          
+          # Création du SVG
+          width = 1200
+          height = 300
+          margin = 60
+          bar_width = (width - 2*margin) / len(days) if days else 1
+          max_count = max(c for _,c in days) if days else 1
+          max_count = max(10, max_count)
+          
+          svg = [f'<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"{width}\" height=\"{height}\">']
+          svg.append(f'<rect width=\"100%\" height=\"100%\" fill=\"#0d1117\"/>')
+          
+          for i, (date, count) in enumerate(days):
+              x = margin + i * bar_width
+              bar_h = (count / max_count) * (height - 2*margin) if count > 0 else 0
+              y = height - margin - bar_h
+              color = '#39d353' if count > 0 else '#2d333b'
+              svg.append(f'<rect x=\"{x}\" y=\"{y}\" width=\"{bar_width-1}\" height=\"{bar_h}\" fill=\"{color}\"/>')
+          
+          # Axes
+          svg.append(f'<line x1=\"{margin}\" y1=\"{height-margin}\" x2=\"{width-margin}\" y2=\"{height-margin}\" stroke=\"#555\" stroke-width=\"1\"/>')
+          # Titre
+          svg.append(f'<text x=\"{width/2}\" y=\"30\" text-anchor=\"middle\" fill=\"#5bcdec\" font-size=\"20\" font-weight=\"bold\">Contributions 2026</text>')
+          # Mois
+          for m in range(1,13):
+              date_obj = datetime.date(2026, m, 1)
+              day_of_year = (date_obj - datetime.date(2026, 1, 1)).days
+              x = margin + day_of_year * bar_width
+              svg.append(f'<text x=\"{x}\" y=\"{height-margin+20}\" text-anchor=\"middle\" fill=\"#ccc\" font-size=\"12\">{date_obj.strftime(\"%b\")}</text>')
+          
+          svg.append('</svg>')
+          
+          with open('activity-graph.svg', 'w') as f:
+              f.write('\\n'.join(svg))
+          print('Graph generated.')
+          "        
+      - name: 📤 Commit et push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add activity-graph.svg
+          git diff --staged --quiet || (git commit -m "📊 Mise à jour du graphique 2026" && git push)
