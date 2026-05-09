@@ -11,53 +11,58 @@ jobs:
     steps:
       - name: ⬇️ Checkout
         uses: actions/checkout@v4
-
-      - name: 🐍 Générer le graphique des commits 2026
+      - name: 🐍 Générer le graphique via GraphQL
         env:
           GH_TOKEN: ${{ secrets.ACTIVITY_GRAPH_TOKEN }}
         run: |
           python3 -c "
-          import requests, datetime, os
+          import requests, datetime, json, os
           from collections import defaultdict
 
           token = os.environ['GH_TOKEN']
           headers = {'Authorization': f'bearer {token}'}
-          per_page = 100
-          events = []
-          # Récupération jusqu'à 10 pages (1000 événements max)
-          for page in range(1, 11):
-              url = f'https://api.github.com/users/Axxel-L/events?per_page={per_page}&page={page}'
-              r = requests.get(url, headers=headers)
-              if r.status_code != 200:
-                  print(f'Erreur API: {r.status_code}')
-                  break
-              batch = r.json()
-              if not batch:
-                  break
-              events.extend(batch)
-              # Si l'événement le plus ancien de cette page est avant le 1er janvier 2026, on peut s'arrêter
-              last_date = batch[-1].get('created_at', '')
-              if last_date < '2026-01-01':
-                  break
-
-          # Comptage des commits par jour
+          query = '''
+          query(\$from: DateTime!, \$to: DateTime!) {
+            viewer {
+              contributionsCollection(from: \$from, to: \$to) {
+                contributionCalendar {
+                  weeks {
+                    contributionDays {
+                      date
+                      contributionCount
+                    }
+                  }
+                }
+              }
+            }
+          }
+          '''
+          variables = {
+            'from': '2026-01-01T00:00:00+00:00',
+            'to': '2027-01-01T00:00:00+00:00'
+          }
+          r = requests.post('https://api.github.com/graphql', 
+                            json={'query': query, 'variables': variables}, 
+                            headers=headers)
+          if r.status_code != 200:
+              print(f'Erreur GraphQL: {r.status_code} {r.text}')
+              exit(1)
+          data = r.json()
+          if 'errors' in data:
+              print(f'Erreur GraphQL: {data[\"errors\"]}')
+              exit(1)
+              
+          calendar = data['data']['viewer']['contributionsCollection']['contributionCalendar']
           daily = defaultdict(int)
-          for ev in events:
-              if ev.get('type') == 'PushEvent':
-                  date = ev['created_at'][:10]  # garder YYYY-MM-DD
-                  commits = ev.get('payload', {}).get('commits', [])
-                  daily[date] += len(commits)
-
-          if not daily:
-              print('Aucun push event trouvé, graphique vide généré.')
-              daily[str(datetime.date.today())] = 0
-
-          # Liste de tous les jours du 1er janvier 2026 à aujourd'hui
+          for week in calendar['weeks']:
+              for day in week['contributionDays']:
+                  daily[day['date']] = day['contributionCount']
+                  
+          # Génération du SVG (identique à la version REST)
           start = datetime.date(2026, 1, 1)
           end = datetime.date.today()
           if end.year > 2026:
               end = datetime.date(2027, 1, 1) - datetime.timedelta(days=1)
-
           days = []
           d = start
           while d <= end:
@@ -65,16 +70,10 @@ jobs:
               d += datetime.timedelta(days=1)
           max_count = max(daily.values()) if daily else 1
           max_count = max(10, max_count)
-
-          # Dimensions SVG
-          width = 1200
-          height = 300
-          margin = 60
+          width, height, margin = 1200, 300, 60
           bar_width = (width - 2*margin) / len(days) if days else 1
-
           svg = [f'<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"{width}\" height=\"{height}\">']
           svg.append(f'<rect width=\"100%\" height=\"100%\" fill=\"#0d1117\"/>')
-
           for i, date_str in enumerate(days):
               count = daily.get(date_str, 0)
               x = margin + i * bar_width
@@ -82,23 +81,18 @@ jobs:
               y = height - margin - bar_h
               color = '#39d353' if count > 0 else '#2d333b'
               svg.append(f'<rect x=\"{x}\" y=\"{y}\" width=\"{bar_width-1}\" height=\"{bar_h}\" fill=\"{color}\"/>')
-
-          # Axe horizontal
           svg.append(f'<line x1=\"{margin}\" y1=\"{height-margin}\" x2=\"{width-margin}\" y2=\"{height-margin}\" stroke=\"#555\" stroke-width=\"1\"/>')
-          # Titre
-          svg.append(f'<text x=\"{width/2}\" y=\"30\" text-anchor=\"middle\" fill=\"#5bcdec\" font-size=\"20\" font-weight=\"bold\">Mes commits 2026</text>')
-          # Labels des mois
+          svg.append(f'<text x=\"{width/2}\" y=\"30\" text-anchor=\"middle\" fill=\"#5bcdec\" font-size=\"20\" font-weight=\"bold\">Contributions 2026</text>')
           for m in range(1, 13):
               date_obj = datetime.date(2026, m, 1)
               delta = (date_obj - start).days
               if delta < len(days):
                   x = margin + delta * bar_width
                   svg.append(f'<text x=\"{x}\" y=\"{height-margin+20}\" text-anchor=\"middle\" fill=\"#ccc\" font-size=\"12\">{date_obj.strftime(\"%b\")}</text>')
-
           svg.append('</svg>')
           with open('activity-graph.svg', 'w') as f:
               f.write('\\n'.join(svg))
-          print('✅ Graphique généré.')
+          print('✅ Graphique 2026 (via GraphQL) généré.')
           "
 
       - name: 📤 Commiter et pousser
