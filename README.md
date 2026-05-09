@@ -4,8 +4,8 @@
 
 ### Entrepreneur & Développeur Web / Desktop
 
-[![Profile views](https://komarev.com/ghpvc/?username=Axxel-L&label=Visites&color=0e75b6&style=flat)](https://github.com/legoshiifr)
-[![GitHub followers](https://img.shields.io/github/followers/legoshiifr?label=Followers&style=social)](https://github.com/legoshiifr)
+[![Profile views](https://komarev.com/ghpvc/?username=Axxel-L&label=Visites&color=0e75b6&style=flat)](https://github.com/Axxel-L)
+[![GitHub followers](https://img.shields.io/github/followers/Axxel-L?label=Followers&style=social)](https://github.com/Axxel-L)
 
 ---
 
