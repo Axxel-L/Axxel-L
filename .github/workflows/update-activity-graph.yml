@@ -1,0 +1,25 @@
+name: 📈 Graphique d'activité 2026
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-graph:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout
+        uses: actions/checkout@v4
+
+      - name: 📥 Télécharger le graphique
+        run: |
+          curl -s -o activity-graph.svg \
+            "https://github-readme-activity-graph.cyclic.app/graph?username=Axxel-L&from=2026-01-01&theme=react-dark&area=true&hide_border=true&token=${{ secrets.ACTIVITY_GRAPH_TOKEN }}"
+
+      - name: 📤 Commiter et pousser
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add activity-graph.svg
+          git diff --staged --quiet || (git commit -m "🔄 Mise à jour du graphique 2026" && git push)
