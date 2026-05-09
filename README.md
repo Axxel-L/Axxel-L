@@ -41,7 +41,7 @@
 
 ### 📊 Activité GitHub (2026)
 
-![Calendrier des contributions 2026](https://raw.githubusercontent.com/Axxel-L/Axxel-L/main/isocalendar.svg)
+![Graphique d'activité](https://raw.githubusercontent.com/Axxel-L/Axxel-L/main/activity-graph.svg)
 
 | Statistiques | Langages dominants |
 |-------------|-------------------|
