@@ -78,10 +78,4 @@
 [![Instagram](https://img.shields.io/badge/Instagram-axxel__la-E4405F?style=flat&logo=instagram&logoColor=white)](https://www.instagram.com/axxel__la/)
 [![Email](https://img.shields.io/badge/Email-axel--l@agence--prestige--numerique.fr-D14836?style=flat&logo=gmail&logoColor=white)](mailto:axel-l@agence-prestige-numerique.fr)
 
----
-
-### ❤️ Soutenir mon travail
-
-[![Ko-fi](https://cdn.ko-fi.com/cdn/kofi3.png?v=3)](https://ko-fi.com/Legoshii)
-
 </div>
