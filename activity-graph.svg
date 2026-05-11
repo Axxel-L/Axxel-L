@@ -147,11 +147,11 @@
 <rect x="1094.0458015267177" y="184.44444444444446" width="7.244274809160306" height="105.55555555555556" class="bar-green"/>
 <rect x="1102.290076335878" y="67.7777777777778" width="7.244274809160306" height="222.2222222222222" class="bar-green"/>
 <rect x="1110.5343511450383" y="195.55555555555554" width="7.244274809160306" height="94.44444444444444" class="bar-green"/>
-<rect x="1118.7786259541986" y="240.0" width="7.244274809160306" height="50.0" class="bar-green"/>
+<rect x="1118.7786259541986" y="234.44444444444446" width="7.244274809160306" height="55.55555555555555" class="bar-green"/>
 <rect x="1127.0229007633588" y="290" width="7.244274809160306" height="0" class="bar-empty"/>
 <rect x="1135.2671755725191" y="45.55555555555557" width="7.244274809160306" height="244.44444444444443" class="bar-green"/>
 <rect x="1143.5114503816794" y="240.0" width="7.244274809160306" height="50.0" class="bar-green"/>
-<rect x="1151.7557251908397" y="290" width="7.244274809160306" height="0" class="bar-empty"/>
+<rect x="1151.7557251908397" y="273.3333333333333" width="7.244274809160306" height="16.666666666666668" class="bar-green"/>
 <line x1="80" y1="290" x2="1160" y2="290" class="axe-line"/>
 <text x="600.0" y="28" text-anchor="middle" class="title"></text>
 <text x="80.0" y="310" text-anchor="middle">Jan</text>
@@ -159,5 +159,5 @@
 <text x="566.412213740458" y="310" text-anchor="middle">Mar</text>
 <text x="821.9847328244275" y="310" text-anchor="middle">Apr</text>
 <text x="1069.3129770992368" y="310" text-anchor="middle">May</text>
-<!-- Cache bust: 2026-05-11T09:34:39.915107 -->
+<!-- Cache bust: 2026-05-11T14:42:56.078894 -->
 </svg>
