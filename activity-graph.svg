@@ -155,7 +155,7 @@
 <rect x="1128.0" y="145.55555555555557" width="7.0" height="144.44444444444443" class="bar-green"/>
 <rect x="1136.0" y="240.0" width="7.0" height="50.0" class="bar-green"/>
 <rect x="1144.0" y="240.0" width="7.0" height="50.0" class="bar-green"/>
-<rect x="1152.0" y="290" width="7.0" height="0" class="bar-empty"/>
+<rect x="1152.0" y="278.8888888888889" width="7.0" height="11.11111111111111" class="bar-green"/>
 <line x1="80" y1="290" x2="1160" y2="290" class="axe-line"/>
 <text x="600.0" y="28" text-anchor="middle" class="title"></text>
 <text x="80.0" y="310" text-anchor="middle">Jan</text>
@@ -163,5 +163,5 @@
 <text x="552.0" y="310" text-anchor="middle">Mar</text>
 <text x="800.0" y="310" text-anchor="middle">Apr</text>
 <text x="1040.0" y="310" text-anchor="middle">May</text>
-<!-- Cache bust: 2026-05-15T08:45:33.734225 -->
+<!-- Cache bust: 2026-05-15T13:59:36.776417 -->
 </svg>
