@@ -158,8 +158,8 @@
 <rect x="1121.1510791366907" y="278.8888888888889" width="6.76978417266187" height="11.11111111111111" class="bar-green"/>
 <rect x="1128.9208633093524" y="290" width="6.76978417266187" height="0" class="bar-empty"/>
 <rect x="1136.6906474820144" y="290" width="6.76978417266187" height="0" class="bar-empty"/>
-<rect x="1144.4604316546763" y="173.33333333333331" width="6.76978417266187" height="116.66666666666667" class="bar-green"/>
-<rect x="1152.230215827338" y="290" width="6.76978417266187" height="0" class="bar-empty"/>
+<rect x="1144.4604316546763" y="167.77777777777777" width="6.76978417266187" height="122.22222222222221" class="bar-green"/>
+<rect x="1152.230215827338" y="206.66666666666669" width="6.76978417266187" height="83.33333333333333" class="bar-green"/>
 <line x1="80" y1="290" x2="1160" y2="290" class="axe-line"/>
 <text x="600.0" y="28" text-anchor="middle" class="title"></text>
 <text x="80.0" y="310" text-anchor="middle">Jan</text>
@@ -167,5 +167,5 @@
 <text x="538.4172661870504" y="310" text-anchor="middle">Mar</text>
 <text x="779.2805755395683" y="310" text-anchor="middle">Apr</text>
 <text x="1012.3741007194244" y="310" text-anchor="middle">May</text>
-<!-- Cache bust: 2026-05-19T09:37:05.366978 -->
+<!-- Cache bust: 2026-05-19T14:54:21.075691 -->
 </svg>
