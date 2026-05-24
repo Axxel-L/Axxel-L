@@ -41,7 +41,7 @@
 
 ### 📊 Activité GitHub (2026)
 
-![Graphique d'activité](https://raw.githubusercontent.com/Axxel-L/Axxel-L/main/activity-graph.svg?v=20260523)
+![Graphique d'activité](https://raw.githubusercontent.com/Axxel-L/Axxel-L/main/activity-graph.svg?v=20260524)
 
 | Statistiques | Langages dominants |
 |-------------|-------------------|
