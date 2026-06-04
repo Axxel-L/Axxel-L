@@ -175,7 +175,7 @@
 <rect x="1132.1290322580646" y="123.33333333333334" width="5.967741935483871" height="166.66666666666666" class="bar-green"/>
 <rect x="1139.0967741935483" y="256.6666666666667" width="5.967741935483871" height="33.333333333333336" class="bar-green"/>
 <rect x="1146.0645161290322" y="206.66666666666669" width="5.967741935483871" height="83.33333333333333" class="bar-green"/>
-<rect x="1153.032258064516" y="290" width="5.967741935483871" height="0" class="bar-empty"/>
+<rect x="1153.032258064516" y="262.22222222222223" width="5.967741935483871" height="27.777777777777775" class="bar-green"/>
 <line x1="80" y1="290" x2="1160" y2="290" class="axe-line"/>
 <text x="600.0" y="28" text-anchor="middle" class="title"></text>
 <text x="80.0" y="310" text-anchor="middle">Jan</text>
@@ -184,5 +184,5 @@
 <text x="707.0967741935484" y="310" text-anchor="middle">Apr</text>
 <text x="916.1290322580645" y="310" text-anchor="middle">May</text>
 <text x="1132.1290322580646" y="310" text-anchor="middle">Jun</text>
-<!-- Cache bust: 2026-06-04T09:51:41.770409 -->
+<!-- Cache bust: 2026-06-04T14:52:15.976775 -->
 </svg>
