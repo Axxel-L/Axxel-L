@@ -297,8 +297,8 @@
 <rect x="1141.118881118881" y="262.0" width="2.7762237762237763" height="28.0" class="bar-green"/>
 <rect x="1144.8951048951049" y="284.0" width="2.7762237762237763" height="6.0" class="bar-green"/>
 <rect x="1148.6713286713286" y="264.0" width="2.7762237762237763" height="26.0" class="bar-green"/>
-<rect x="1152.4475524475524" y="268.0" width="2.7762237762237763" height="22.0" class="bar-green"/>
-<rect x="1156.2237762237762" y="290" width="2.7762237762237763" height="0" class="bar-empty"/>
+<rect x="1152.4475524475524" y="238.0" width="2.7762237762237763" height="52.0" class="bar-green"/>
+<rect x="1156.2237762237762" y="258.0" width="2.7762237762237763" height="32.0" class="bar-green"/>
 <line x1="80" y1="290" x2="1160" y2="290" class="axe-line"/>
 <text x="600.0" y="28" text-anchor="middle" class="title"></text>
 <text x="80.0" y="310" text-anchor="middle">Jan</text>
@@ -311,5 +311,5 @@
 <text x="880.5594405594405" y="310" text-anchor="middle">Aug</text>
 <text x="997.6223776223776" y="310" text-anchor="middle">Sep</text>
 <text x="1110.909090909091" y="310" text-anchor="middle">Oct</text>
-<!-- Cache bust: 2026-10-13T00:05:32.924716 -->
+<!-- Cache bust: 2026-10-13T13:28:45.144971 -->
 </svg>
