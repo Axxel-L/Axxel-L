@@ -294,9 +294,9 @@
 <rect x="1104.7098976109216" y="262.0" width="2.6860068259385668" height="28.0" class="bar-green"/>
 <rect x="1108.39590443686" y="268.0" width="2.6860068259385668" height="22.0" class="bar-green"/>
 <rect x="1112.0819112627987" y="256.0" width="2.6860068259385668" height="34.0" class="bar-green"/>
-<rect x="1115.7679180887374" y="262.0" width="2.6860068259385668" height="28.0" class="bar-green"/>
-<rect x="1119.4539249146758" y="284.0" width="2.6860068259385668" height="6.0" class="bar-green"/>
-<rect x="1123.1399317406144" y="264.0" width="2.6860068259385668" height="26.0" class="bar-green"/>
+<rect x="1115.7679180887374" y="226.0" width="2.6860068259385668" height="64.0" class="bar-green"/>
+<rect x="1119.4539249146758" y="278.0" width="2.6860068259385668" height="12.0" class="bar-green"/>
+<rect x="1123.1399317406144" y="262.0" width="2.6860068259385668" height="28.0" class="bar-green"/>
 <rect x="1126.8259385665528" y="238.0" width="2.6860068259385668" height="52.0" class="bar-green"/>
 <rect x="1130.5119453924915" y="232.0" width="2.6860068259385668" height="58.0" class="bar-green"/>
 <rect x="1134.1979522184301" y="282.0" width="2.6860068259385668" height="8.0" class="bar-green"/>
@@ -304,8 +304,8 @@
 <rect x="1141.5699658703072" y="268.0" width="2.6860068259385668" height="22.0" class="bar-green"/>
 <rect x="1145.2559726962459" y="236.0" width="2.6860068259385668" height="54.0" class="bar-green"/>
 <rect x="1148.9419795221843" y="286.0" width="2.6860068259385668" height="4.0" class="bar-green"/>
-<rect x="1152.627986348123" y="268.0" width="2.6860068259385668" height="22.0" class="bar-green"/>
-<rect x="1156.3139931740616" y="268.0" width="2.6860068259385668" height="22.0" class="bar-green"/>
+<rect x="1152.627986348123" y="266.0" width="2.6860068259385668" height="24.0" class="bar-green"/>
+<rect x="1156.3139931740616" y="242.0" width="2.6860068259385668" height="48.0" class="bar-green"/>
 <line x1="80" y1="290" x2="1160" y2="290" class="axe-line"/>
 <text x="600.0" y="28" text-anchor="middle" class="title">📈 Activité &amp; Contributions GitHub (2026)</text>
 <text x="80.0" y="310" text-anchor="middle">Jan</text>
