@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="350">
-<style>text{font-family:system-ui,-apple-system,sans-serif;fill:#ccc;font-size:12px}.title{font-size:18px;fill:#5bcdec;font-weight:600}.axe-line{stroke:#555;stroke-width:1}.bar-green{fill:#39d353}.bar-empty{fill:#2d333b}</style>
-<rect width="100%" height="100%" fill="#0d1117"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="350" viewBox="0 0 1200 350">
+<style>text{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;fill:#8a8a84;font-size:12px}.title{font-size:15px;fill:#f2f2ee;font-weight:600;letter-spacing:0.5px}.axe-line{stroke:#222220;stroke-width:1}.bar-green{fill:#22c55e}.bar-empty{fill:#161614}</style>
+<rect width="100%" height="100%" rx="16" ry="16" fill="#0a0a0a" stroke="#222220" stroke-width="1"/>
 <line x1="80" y1="290.0" x2="1160" y2="290.0" class="axe-line" stroke-dasharray="3,3"/>
 <text x="70" y="294.0" text-anchor="end">0</text>
 <line x1="80" y1="240.0" x2="1160" y2="240.0" class="axe-line" stroke-dasharray="3,3"/>
@@ -307,7 +307,7 @@
 <rect x="1152.627986348123" y="268.0" width="2.6860068259385668" height="22.0" class="bar-green"/>
 <rect x="1156.3139931740616" y="268.0" width="2.6860068259385668" height="22.0" class="bar-green"/>
 <line x1="80" y1="290" x2="1160" y2="290" class="axe-line"/>
-<text x="600.0" y="28" text-anchor="middle" class="title"></text>
+<text x="600.0" y="28" text-anchor="middle" class="title">📈 Activité &amp; Contributions GitHub (2026)</text>
 <text x="80.0" y="310" text-anchor="middle">Jan</text>
 <text x="194.2662116040956" y="310" text-anchor="middle">Feb</text>
 <text x="297.47440273037546" y="310" text-anchor="middle">Mar</text>
@@ -318,5 +318,4 @@
 <text x="861.4334470989761" y="310" text-anchor="middle">Aug</text>
 <text x="975.6996587030717" y="310" text-anchor="middle">Sep</text>
 <text x="1086.2798634812289" y="310" text-anchor="middle">Oct</text>
-<!-- Cache bust: 2026-10-20T16:17:24.142741 -->
 </svg>

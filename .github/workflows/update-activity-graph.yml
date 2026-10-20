@@ -71,7 +71,6 @@ jobs:
           max_count = max(daily.values()) if daily else 1
           max_count = max(10, max_count)
 
-          # Arrondir max_count pour un axe propre
           step = 1
           if max_count > 20: step = 5
           if max_count > 50: step = 10
@@ -83,17 +82,15 @@ jobs:
           plot_height = height - margin_top - margin_bottom
           bar_width = plot_width / len(days) if days else 1
 
-          svg = [f'<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"{width}\" height=\"{height}\">']
-          svg.append('<style>text{font-family:system-ui,-apple-system,sans-serif;fill:#ccc;font-size:12px}.title{font-size:18px;fill:#5bcdec;font-weight:600}.axe-line{stroke:#555;stroke-width:1}.bar-green{fill:#39d353}.bar-empty{fill:#2d333b}</style>')
-          svg.append(f'<rect width=\"100%\" height=\"100%\" fill=\"#0d1117\"/>')
+          svg = [f'<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"{width}\" height=\"{height}\" viewBox=\"0 0 {width} {height}\">']
+          svg.append('<style>text{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,\\\"Segoe UI\\\",Roboto,sans-serif;fill:#8a8a84;font-size:12px}.title{font-size:15px;fill:#f2f2ee;font-weight:600;letter-spacing:0.5px}.axe-line{stroke:#222220;stroke-width:1}.bar-green{fill:#22c55e}.bar-empty{fill:#161614}</style>')
+          svg.append(f'<rect width=\"100%\" height=\"100%\" rx=\"16\" ry=\"16\" fill=\"#0a0a0a\" stroke=\"#222220\" stroke-width=\"1\"/>')
 
-          # Axe Y : lignes horizontales + labels
           for val in range(0, max_axe + 1, step):
               y = margin_top + plot_height - (val / max_axe) * plot_height
               svg.append(f'<line x1=\"{margin_left}\" y1=\"{y}\" x2=\"{width-margin_right}\" y2=\"{y}\" class=\"axe-line\" stroke-dasharray=\"3,3\"/>')
               svg.append(f'<text x=\"{margin_left - 10}\" y=\"{y + 4}\" text-anchor=\"end\">{val}</text>')
 
-          # Barres
           for i, date_str in enumerate(days):
               count = daily.get(date_str, 0)
               x = margin_left + i * bar_width
@@ -102,13 +99,10 @@ jobs:
               cls = 'bar-green' if count > 0 else 'bar-empty'
               svg.append(f'<rect x=\"{x}\" y=\"{y}\" width=\"{bar_width-1}\" height=\"{bar_h}\" class=\"{cls}\"/>')
 
-          # Axe X
           svg.append(f'<line x1=\"{margin_left}\" y1=\"{margin_top + plot_height}\" x2=\"{width-margin_right}\" y2=\"{margin_top + plot_height}\" class=\"axe-line\"/>')
 
-          # Titre
-          svg.append(f'<text x=\"{width/2}\" y=\"28\" text-anchor=\"middle\" class=\"title\"></text>')
+          svg.append(f'<text x=\"{width/2}\" y=\"28\" text-anchor=\"middle\" class=\"title\">📈 Activité &amp; Contributions GitHub (2026)</text>')
 
-          # Mois
           for m in range(1, 13):
               date_obj = datetime.date(2026, m, 1)
               delta = (date_obj - start).days
@@ -116,8 +110,6 @@ jobs:
                   x = margin_left + delta * bar_width
                   svg.append(f'<text x=\"{x}\" y=\"{margin_top + plot_height + 20}\" text-anchor=\"middle\">{date_obj.strftime(\"%b\")}</text>')
 
-          # ⚡ Casse-cache définitif : commentaire avec horodatage
-          svg.append(f'<!-- Cache bust: {datetime.datetime.now().isoformat()} -->')
           svg.append('</svg>')
 
           with open('activity-graph.svg', 'w') as f:
@@ -134,7 +126,6 @@ jobs:
 
       - name: 🔄 Forcer le rafraîchissement du cache (lecture du README)
         run: |
-          # Met à jour le paramètre ?v= avec la date du jour pour court-circuiter le cache
           TODAY=$(date +%Y%m%d)
           sed -i "s|activity-graph.svg?v=[0-9]*|activity-graph.svg?v=$TODAY|g" README.md
           git add README.md
