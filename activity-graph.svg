@@ -320,7 +320,7 @@
 <rect x="1145.974025974026" y="262.0" width="2.5064935064935066" height="28.0" class="bar-green"/>
 <rect x="1149.4805194805194" y="232.0" width="2.5064935064935066" height="58.0" class="bar-green"/>
 <rect x="1152.987012987013" y="288.0" width="2.5064935064935066" height="2.0" class="bar-green"/>
-<rect x="1156.4935064935064" y="290" width="2.5064935064935066" height="0" class="bar-empty"/>
+<rect x="1156.4935064935064" y="286.0" width="2.5064935064935066" height="4.0" class="bar-green"/>
 <line x1="80" y1="290" x2="1160" y2="290" class="axe-line"/>
 <text x="600.0" y="28" text-anchor="middle" class="title">📈 Activité &amp; Contributions GitHub (2026)</text>
 <text x="80.0" y="310" text-anchor="middle">Jan</text>
