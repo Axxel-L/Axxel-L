@@ -170,7 +170,7 @@
 
 <div align="center">
 
-  <img src="https://raw.githubusercontent.com/Axxel-L/Axxel-L/main/activity-graph.svg?v=20261111" width="100%" alt="Graphique d'activité GitHub" />
+  <img src="https://raw.githubusercontent.com/Axxel-L/Axxel-L/main/activity-graph.svg?v=20261112" width="100%" alt="Graphique d'activité GitHub" />
 
   <br><br>
 
