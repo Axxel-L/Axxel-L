@@ -334,8 +334,8 @@
 <rect x="1143.28173374613" y="246.0" width="2.343653250773994" height="44.0" class="bar-green"/>
 <rect x="1146.6253869969041" y="180.0" width="2.343653250773994" height="110.0" class="bar-green"/>
 <rect x="1149.969040247678" y="214.0" width="2.343653250773994" height="76.0" class="bar-green"/>
-<rect x="1153.312693498452" y="290" width="2.343653250773994" height="0" class="bar-empty"/>
-<rect x="1156.656346749226" y="290" width="2.343653250773994" height="0" class="bar-empty"/>
+<rect x="1153.312693498452" y="266.0" width="2.343653250773994" height="24.0" class="bar-green"/>
+<rect x="1156.656346749226" y="248.0" width="2.343653250773994" height="42.0" class="bar-green"/>
 <line x1="80" y1="290" x2="1160" y2="290" class="axe-line"/>
 <text x="600.0" y="28" text-anchor="middle" class="title">📈 Activité &amp; Contributions GitHub (2026)</text>
 <text x="80.0" y="310" text-anchor="middle">Jan</text>
