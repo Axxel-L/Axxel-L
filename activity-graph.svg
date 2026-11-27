@@ -336,14 +336,14 @@
 <rect x="1124.108761329305" y="208.0" width="2.2628398791540785" height="82.0" class="bar-green"/>
 <rect x="1127.3716012084592" y="266.0" width="2.2628398791540785" height="24.0" class="bar-green"/>
 <rect x="1130.6344410876134" y="138.0" width="2.2628398791540785" height="152.0" class="bar-green"/>
-<rect x="1133.8972809667673" y="238.0" width="2.2628398791540785" height="52.0" class="bar-green"/>
+<rect x="1133.8972809667673" y="234.0" width="2.2628398791540785" height="56.0" class="bar-green"/>
 <rect x="1137.1601208459215" y="290" width="2.2628398791540785" height="0" class="bar-empty"/>
 <rect x="1140.4229607250754" y="290" width="2.2628398791540785" height="0" class="bar-empty"/>
 <rect x="1143.6858006042296" y="288.0" width="2.2628398791540785" height="2.0" class="bar-green"/>
 <rect x="1146.9486404833838" y="130.0" width="2.2628398791540785" height="160.0" class="bar-green"/>
 <rect x="1150.2114803625377" y="222.0" width="2.2628398791540785" height="68.0" class="bar-green"/>
-<rect x="1153.4743202416919" y="208.0" width="2.2628398791540785" height="82.0" class="bar-green"/>
-<rect x="1156.7371601208458" y="288.0" width="2.2628398791540785" height="2.0" class="bar-green"/>
+<rect x="1153.4743202416919" y="206.0" width="2.2628398791540785" height="84.0" class="bar-green"/>
+<rect x="1156.7371601208458" y="242.0" width="2.2628398791540785" height="48.0" class="bar-green"/>
 <line x1="80" y1="290" x2="1160" y2="290" class="axe-line"/>
 <text x="600.0" y="28" text-anchor="middle" class="title">📈 Activité &amp; Contributions GitHub (2026)</text>
 <text x="80.0" y="310" text-anchor="middle">Jan</text>
